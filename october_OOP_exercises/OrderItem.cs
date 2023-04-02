@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace october_OOP_exercises
 {
-    internal class OrderItem  //linijka na paragonie: cena jednostkowa i wartośc i ilośc i nazwa produktu
+    public class OrderItem  //linijka na paragonie: cena jednostkowa i wartośc i ilośc i nazwa produktu
     {
          private string productName;
          private decimal price;
-         private int quantity;
+         protected int quantity;
 
         public OrderItem(string productName , decimal price, int quantity)
         {
@@ -24,7 +24,7 @@ namespace october_OOP_exercises
             return $"{productName} - {quantity}*{price} - {GetValue()}";
         }
 
-        public decimal GetValue()
+        public virtual decimal GetValue()
         {
             return quantity * price;
         }

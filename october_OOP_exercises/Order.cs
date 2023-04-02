@@ -9,27 +9,35 @@ namespace october_OOP_exercises
 {
     internal class Order
     {
+        private string _orderTitle;
         private List<OrderItem> OrderItems = new List<OrderItem>();
 
+        public Order(string title = "")
+        {
+            _orderTitle = title;
+        }
+
+        public Order(List<OrderItem> OrderItems, string title = "")
+        {
+            this.OrderItems = OrderItems;
+            _orderTitle = title;
+        }
+
         public void AddItem(OrderItem orderItem)
-        { 
+        {
             OrderItems.Add(orderItem);
         }
 
-        public Order()
+        public void SetTitle(string title)
         {
-
-        }
-
-        public Order(List<OrderItem> OrderItems)
-        {
-            this.OrderItems = OrderItems;
+            _orderTitle = title;
         }
 
         public override string ToString()
         {
-            string text = "";
+            string text = _orderTitle + Environment.NewLine;
             //decimal sum = 0;
+
             foreach(var item in OrderItems) 
             {
                 //Console.WriteLine(item.ToString()); //ToString -> default display
