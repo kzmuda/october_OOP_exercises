@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            OrderItem orderItem = new OrderItem("mleko", 3.2m ,4);
+            Console.WriteLine(orderItem);
         }
     }
 }
