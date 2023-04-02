@@ -17,12 +17,16 @@ namespace october_OOP_exercises
             this.productName = productName;
             this.price = price;
             this.quantity = quantity;
-
         }
 
         public override string ToString()
         {
-            return productName;
+            return $"{productName} - {quantity}*{price} - {GetValue()}";
+        }
+
+        public decimal GetValue()
+        {
+            return quantity * price;
         }
     }
 }
